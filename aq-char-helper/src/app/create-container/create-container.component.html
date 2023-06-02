@@ -1,0 +1,22 @@
+<div class="w-full h-full flex flex-col"*ngIf="user.username; else loginRequired" [ngStyle]="{background: 'url(../../assets/img/create_page_bg.png)'}">
+  <div class="mt-4 ml-4 font-Aether text-3xl text-AQ-title flex items-start align-middle font-bold">
+    Create Character
+  </div>
+  <CreateForm />
+</div>
+
+<ng-template #loginRequired>
+  <div class="w-full h-full flex flex-col" [ngStyle]="{background: 'url(../../assets/img/create_page_bg.png)'}">
+    <div class="mt-4 ml-4 font-Aether text-3xl text-AQ-title flex items-start align-middle">
+      Create Character
+    </div>
+    <div class="w-screen h-screen flex flex-col items-center justify-center align-middle">
+      <div class="border border-black flex flex-col items-center justify-center align-middle p-2">
+        <label class="text-AQ-title text-2xl">
+          You must log in to create characters!
+        </label>
+        <a routerLink="/login" class="text-white lg:text-AQ-title hover:text-[#db4040]">Go to Login</a>
+      </div>
+    </div>
+  </div>
+</ng-template>

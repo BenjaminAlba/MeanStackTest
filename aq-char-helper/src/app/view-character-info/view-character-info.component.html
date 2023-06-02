@@ -1,0 +1,291 @@
+<div *ngIf="viewMode; else editMode"> 
+  <div *ngIf="currentCharacter.characterName">
+    <div class="flex flex-row w-full ">
+      <div class="w-2/6 flex flex-col justify-start items-center align-middle">
+        <div class="mt-4 h-[250px] w-[250px] border border-black">
+          <!-- will image go here? -->
+        </div>
+  
+        <div class="mt-4 text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            Name:
+          </label>
+          <input 
+            type="text" 
+            class="font-Aether text-2xl text-AQ-title block w-full p-4 rounded-sm bg-transparent"
+            placeholder="Character Name"
+            name="characterName"
+            value="{{currentCharacter.characterName}}" 
+            readonly
+          /> <!-- do I need id? -->
+        </div>
+  
+        <div class="font-Aether font-bold text-AQ-title w-5/6 mt-4 text-lg rounded-sm flex flex-col items-center justify-center align-middle border border-AQ-title py-2 px-2">
+          <label class="text-xl"> Initial Stats </label>
+          <div class="flex flex-row items-center justify-center align-middle">
+            <label> Health {{ currentCharacter.initialHealth}} </label>
+            <input 
+              type="number"
+              class="ml-4 w-full border border-AQ-title bg-transparent"
+              placeholder="Health"
+              name="finalHealth"
+              value="{{currentCharacter.finalHealth}}" 
+              readonly
+            />
+          </div>
+          <div class="flex flex-row w-full">
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Attack </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Atk"
+                name="initialAtk"
+                value="{{currentCharacter.initialAtk}}" 
+                readonly
+              />
+            </div>
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Defense </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Def"
+                name="initialDef"
+                value="{{currentCharacter.initialDefense}}" 
+                readonly
+              />
+            </div>
+          </div>
+          <div class="flex flex-row w-full">
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Spirit </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Spr"
+                name="initialSpirit"
+                value="{{currentCharacter.initialSpirit}}" 
+                readonly
+              />
+            </div>
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Speed </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Spd"
+                name="initialSpd"
+                value="{{currentCharacter.initialSpeed}}" 
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+  
+        <div class="font-Aether font-bold text-AQ-title w-5/6 mt-4 text-lg rounded-sm flex flex-col items-center justify-center align-middle border border-AQ-title py-2 px-2">
+          <label class="text-xl"> Max Level Stats </label>
+          <div class="flex flex-row items-center justify-center align-middle">
+            <label> Health </label>
+            <input 
+              type="number"
+              class="ml-4 w-full border border-AQ-title bg-transparent"
+              placeholder="Health"
+              name="finalHealth"
+              value="{{currentCharacter.finalHealth}}" 
+              readonly
+            />
+          </div>
+          <div class="flex flex-row w-full">
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Attack </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Atk"
+                name="finalAtk"
+                value="{{currentCharacter.finalAtk}}" 
+                readonly
+              />
+            </div>
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Defense </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Def"
+                name="finalDef"
+                value="{{currentCharacter.finalDefense}}" 
+                readonly
+              />
+            </div>
+          </div>
+          <div class="flex flex-row w-full">
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Spirit </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Spr"
+                name="finalSpirit"
+                value="{{currentCharacter.finalSpirit}}" 
+                readonly
+              />
+            </div>
+            <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+              <label> Speed </label>
+              <input 
+                type="number"
+                class="w-full border border-AQ-title bg-transparent"
+                placeholder="Spd"
+                name="finalSpeed"
+                value="{{currentCharacter.finalSpeed}}" 
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="w-4/6 p-4 flex flex-col gap-8">
+        <div class="bg-red-50">
+          <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+            <label>
+              Burst:
+            </label>
+            <input 
+              type="text" 
+              class="bg-red-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+              placeholder="Burst Name"
+              name="burstName"
+              value="{{currentCharacter.burstName}}" 
+              readonly
+            />
+          </div>
+          <textarea
+            type="text"
+            class="bg-red-50 w-full text-AQ-title font-Aether" 
+            placeholder="Burst Description"
+            name="burstDescription"
+            value="{{currentCharacter.burstDescription}}" 
+            readonly
+          > <!-- does it require type? -->
+          </textarea>
+        </div>
+  
+        <div class="bg-green-50">
+          <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+            <label>
+              S1:
+            </label>
+            <input 
+              type="text" 
+              class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+              placeholder="Skill 1 Name"
+              name="skill1Name"
+              value="{{currentCharacter.skill1Name}}" 
+              readonly
+            />
+          </div>
+          <textarea 
+            type="text"
+            class="bg-green-50 w-full text-AQ-title font-Aether" 
+            placeholder="Skill 1 Description"
+            name="skill1Description"
+            value="{{currentCharacter.skill1Description}}" 
+            readonly
+          >
+          </textarea>
+        </div>
+        
+        <div class="bg-green-50">
+          <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+            <label>
+              S2:
+            </label>
+            <input 
+              type="text" 
+              class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+              placeholder="Skill 2 Name"
+              name="skill2Name"
+              value="{{currentCharacter.skill2Name}}" 
+              readonly
+            />
+          </div>
+          <textarea 
+            type="text"
+            class="bg-green-50 w-full text-AQ-title font-Aether" 
+            placeholder="Skill 2 Description"
+            name="skill2Description"
+            value="{{currentCharacter.skill2Description}}" 
+            readonly
+          >
+          </textarea>
+        </div>
+  
+        <div class="bg-green-50">
+          <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+            <label>
+              S3:
+            </label>
+            <input 
+              type="text" 
+              class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+              placeholder="Skill 3 Name"
+              name="skill3Name"
+              value="{{currentCharacter.skill3Name}}" 
+              readonly
+            />
+          </div>
+          <textarea 
+            type="text"
+            class="bg-green-50 w-full text-AQ-title font-Aether" 
+            placeholder="Skill 3 Description"
+            name="skill3Description"
+            value="{{currentCharacter.skill3Description}}" 
+            readonly
+          >
+          </textarea>
+        </div>
+  
+        <div class="bg-green-50">
+          <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+            <label>
+              S4:
+            </label>
+            <input 
+              type="text" 
+              class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+              placeholder="Skill 4 Name"
+              name="skill4Name"
+              value="{{currentCharacter.skill4Name}}" 
+              readonly
+            />
+          </div>
+          <textarea 
+            type="text"
+            class="bg-green-50 w-full text-AQ-title font-Aether" 
+            placeholder="Skill 4 Description"
+            name="skill4Description"
+            value="{{currentCharacter.skill4Description}}" 
+            readonly
+          >
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="w-full border border-black flex flex-row items-end align-middle justify-end">
+      <a
+        class="text-white text-xl mr-20 btn bg-AQ-title hover:bg-[#db4040] focus:outline-none"
+        routerLink="view/{{ currentCharacter.id }}"
+      >
+        <!--Edit Character--> {{ currentCharacter.id }} 
+      </a>
+    </div>
+  </div>  
+</div>
+
+<ng-template #editMode>
+ sdaasdasdsadddddddddddddddddddddddddddddddadadsavvasvdsavdasvdavsbabfabgfsdgsabgsbdgsdabsd
+</ng-template>

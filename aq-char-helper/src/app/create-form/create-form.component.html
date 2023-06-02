@@ -1,0 +1,292 @@
+<div *ngIf="!submitted">
+  <div class="flex flex-row w-full h-screen">
+    <div class="w-2/6 h-screen flex flex-col justify-start items-center align-middle">
+      <div class="mt-4 h-[250px] w-[250px] border border-black">
+        <!-- will image go here? -->
+      </div>
+
+      <div class="mt-4 text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+        <label>
+          Name:
+        </label>
+        <input 
+          type="text" 
+          class="font-Aether text-2xl text-AQ-title block w-full p-4 rounded-sm bg-transparent"
+          placeholder="Character Name"
+          name="characterName"
+          [(ngModel)]="character.characterName"
+          required
+        /> <!-- do I need id? -->
+      </div>
+
+      <div class="font-Aether font-bold text-AQ-title w-5/6 mt-4 text-lg rounded-sm flex flex-col items-center justify-center align-middle border border-AQ-title py-2 px-2">
+        <label class="text-xl"> Initial Stats </label>
+        <div class="flex flex-row items-center justify-center align-middle">
+          <label> Health </label>
+          <input 
+            type="number"
+            class="ml-4 w-full border border-AQ-title bg-transparent"
+            placeholder="Health"
+            name="initialHealth"
+            [(ngModel)]="character.initialHealth"
+            required
+          />
+        </div>
+        <div class="flex flex-row w-full">
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Attack </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Atk"
+              name="initialAtk"
+              [(ngModel)]="character.initialAtk"
+              required
+            />
+          </div>
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Defense </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Def"
+              name="initialDef"
+              [(ngModel)]="character.initialDefense"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex flex-row w-full">
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Spirit </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Spr"
+              name="initialSpirit"
+              [(ngModel)]="character.initialSpirit"
+              required
+            />
+          </div>
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Speed </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Spd"
+              name="initialSpd"
+              [(ngModel)]="character.initialSpeed"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="font-Aether font-bold text-AQ-title w-5/6 mt-4 text-lg rounded-sm flex flex-col items-center justify-center align-middle border border-AQ-title py-2 px-2">
+        <label class="text-xl"> Max Level Stats </label>
+        <div class="flex flex-row items-center justify-center align-middle">
+          <label> Health </label>
+          <input 
+            type="number"
+            class="ml-4 w-full border border-AQ-title bg-transparent"
+            placeholder="Health"
+            name="initialHealth"
+            [(ngModel)]="character.finalHealth"
+            required
+          />
+        </div>
+        <div class="flex flex-row w-full">
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Attack </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Atk"
+              name="initialHealth"
+              [(ngModel)]="character.finalAtk"
+              required
+            />
+          </div>
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Defense </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Def"
+              name="initialHealth"
+              [(ngModel)]="character.finalDefense"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex flex-row w-full">
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Spirit </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Spr"
+              name="initialHealth"
+              [(ngModel)]="character.finalSpirit"
+              required
+            />
+          </div>
+          <div class="w-3/6 flex flex-col items-center justify-center align-middle">
+            <label> Speed </label>
+            <input 
+              type="number"
+              class="w-full border border-AQ-title bg-transparent"
+              placeholder="Spd"
+              name="initialHealth"
+              [(ngModel)]="character.finalSpeed"
+              required
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-4/6 h-screen p-4 flex flex-col gap-8">
+      <div class="bg-red-50">
+        <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            Burst:
+          </label>
+          <input 
+            type="text" 
+            class="bg-red-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+            placeholder="Burst Name"
+            name="burstName"
+            [(ngModel)]="character.burstName"
+            required
+          />
+        </div>
+        <textarea
+          type="text"
+          class="bg-red-50 w-full text-AQ-title font-Aether" 
+          placeholder="Burst Description"
+          name="burstDescription"
+          [(ngModel)]="character.burstDescription"
+          required
+        > <!-- does it require type? -->
+        </textarea>
+      </div>
+
+      <div class="bg-green-50">
+        <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            S1:
+          </label>
+          <input 
+            type="text" 
+            class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+            placeholder="Skill 1 Name"
+            name="skill1Name"
+            [(ngModel)]="character.skill1Name"
+            required
+          />
+        </div>
+        <textarea 
+          type="text"
+          class="bg-green-50 w-full text-AQ-title font-Aether" 
+          placeholder="Skill 1 Description"
+          name="skill1Description"
+          [(ngModel)]="character.skill1Description"
+          required
+        >
+        </textarea>
+      </div>
+      
+      <div class="bg-green-50">
+        <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            S2:
+          </label>
+          <input 
+            type="text" 
+            class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+            placeholder="Skill 2 Name"
+            name="skill2Name"
+            [(ngModel)]="character.skill2Name"
+            required
+          />
+        </div>
+        <textarea 
+          type="text"
+          class="bg-green-50 w-full text-AQ-title font-Aether" 
+          placeholder="Skill 2 Description"
+          name="skill2Description"
+          [(ngModel)]="character.skill2Description"
+          required
+        >
+        </textarea>
+      </div>
+
+      <div class="bg-green-50">
+        <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            S3:
+          </label>
+          <input 
+            type="text" 
+            class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+            placeholder="Skill 3 Name"
+            name="skill3Name"
+            [(ngModel)]="character.skill3Name"
+            required
+          />
+        </div>
+        <textarea 
+          type="text"
+          class="bg-green-50 w-full text-AQ-title font-Aether" 
+          placeholder="Skill 3 Description"
+          name="skill3Description"
+          [(ngModel)]="character.skill3Description"
+          required
+        >
+        </textarea>
+      </div>
+
+      <div class="bg-green-50">
+        <div class="text-AQ-title font-Aether text-2xl flex flex-row items-center align-middle gap-4">
+          <label>
+            S4:
+          </label>
+          <input 
+            type="text" 
+            class="bg-green-50 text-AQ-title block w-full p-4 text-lg rounded-sm" 
+            placeholder="Skill 4 Name"
+            name="skill4Name"
+            [(ngModel)]="character.skill4Name"
+            required
+          />
+        </div>
+        <textarea 
+          type="text"
+          class="bg-green-50 w-full text-AQ-title font-Aether" 
+          placeholder="Skill 4 Description"
+          name="skill4Description"
+          [(ngModel)]="character.skill4Description"
+          required
+        >
+        </textarea>
+      </div>
+      <div class="flex flex-row items-end justify-end align-middle">
+        <button (click)="saveCharacter()" class="w-1/6 btn bg-AQ-title hover:bg-[#db4040] focus:outline-none">
+          Create Character
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="submitted" class="w-screen h-screen flex flex-col items-center justify-center align-middle">
+  <div class="border border-black flex flex-col items-center justify-center align-middle p-2">
+    <label class="text-AQ-title text-2xl">
+      Character was created successfully!
+    </label>
+    <button class="mt-2 w-full btn bg-AQ-title hover:bg-[#db4040] focus:outline-none" (click)="newCharacter()">
+      Create another Character
+    </button>
+  </div>
+</div>

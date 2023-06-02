@@ -1,0 +1,91 @@
+<div class="mt-8 w-screen border border-red-900 flex flex-col items-center justify-center align-middle">
+  <div class="w-full flex flex-row items-center justify-end align-middle mb-3 border border-black py-2 px-4">
+    <div class="w-full flex items-start border border-black">
+      <div class="w-5/6 bg-gray-100 bg-opacity-50">
+        <label class="ml-4 font-Aether font-bold text-AQ-title text-3xl">
+          Character List
+        </label>
+      </div>
+    </div> 
+    <input
+      type="text"
+      class="  text-AQ-title block p-4 text-lg rounded-sm bg-gray-100"
+      placeholder="Search by author"
+      [(ngModel)]="author"
+    />
+    <div class="input-group-append">
+      <button
+        class="uppercase block w-full p-4 text-lg text-white bg-AQ-title hover:bg-[#db4040] focus:outline-none"
+        type="button"
+        (click)="searchAuthor()"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div class="flex flex-col border border-green-400 w-5/6">
+    <ul class="flex flex-col gap-2">
+      <li
+        class="h-[50px] w-full bg-gray-100 bg-opacity-50 flex flex-row"
+        *ngFor="let character of characters; let i = index"
+        [class.active]="i == currentIndex"
+        
+      >
+
+        <div class="flex flex-col ml-4 w-1/6">
+          <label>
+            Name: {{ character.characterName }}
+          </label>
+          <label>
+            Author: {{ character.author }}
+          </label>
+        </div>
+
+        <div class="flex flex-col ml-4 w-4/6">
+          <div class="flex flex-row gap-4">
+            <label>
+              S1: {{ character.skill1Name }}
+            </label>
+            <label>
+              S2: {{ character.skill2Name }}
+            </label>
+          </div>
+          <div class="flex flex-row gap-4">
+            <label>
+              S3: {{ character.skill3Name }}
+            </label>
+            <label>
+              S4: {{ character.skill4Name }}
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end justify-end align-middle w-1/6">
+          <button
+            class="uppercase h-full block p-4 text-lg text-white bg-AQ-title hover:bg-[#db4040] focus:outline-none"
+            type="button"
+            (click)="setActiveCharacter(character, i)"
+          >
+            Select
+          </button>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="border border-black w-full flex flex-row items-end align-middle justify-end my-4">
+    <button class="text-white w-1/12 uppercase block p-4 text-lg  bg-[#5c0512] hover:bg-[#db4040] focus:outline-none" (click)="removeAllCharacters()">
+      Remove All
+    </button>
+  </div>
+
+
+  <div class="w-screen h-full">
+    <ViewCharacterInfo
+      [viewMode]="true"
+      [currentCharacter]="currentCharacter"
+    >
+    </ViewCharacterInfo>
+  </div>
+</div>

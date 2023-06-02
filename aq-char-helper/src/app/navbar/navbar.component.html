@@ -1,0 +1,46 @@
+<div class="w-screen fixed"> <!-- Container -->
+  <section class="w-full h-[64px]">
+    <img src="../../assets/img/navbar-bg-1200.png" class=" w-full h-full object-fill">
+  </section>
+  <div class="w-full navbar relative bottom-[64px]">
+    <div class="navbar-start">
+      <div class="dropdown bg-transparent">
+        <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        </label>
+        <ul tabindex="0" class="text-xl text-AQ-base font-Aether menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent rounded-box w-52">
+          <li><a routerLink="/view">View</a></li>
+          <li><a routerLink="/create">Create</a></li>
+          <li><a routerLink="/about">About</a></li>
+        </ul>
+      </div>
+      <label class=" ml-4 text-3xl font-bold font-Aether text-AQ-title "> AetherQuest </label>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="font-Aether menu menu-horizontal px-1 text-xl text-AQ-base">
+        <li><a routerLink="/view">View</a></li>
+        <li><a routerLink="/create">Create</a></li>
+        <li><a routerLink="/about">About</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+
+      <div class="flex flex-row" *ngIf="user.username; else noLoggedUser">
+        <div class="flex flex-col items-center align-middle justify-center">
+          <label class="text-xl text-AQ-title font-Aether font-bold mr-4">
+            {{user.username}}
+          </label>
+        </div>
+        <button class="btn btn-ghost bg-transparent font-Aether text-xl text-AQ-title" (click)="logOut()">
+          Log Out
+        </button>
+      </div>
+
+      <ng-template #noLoggedUser>
+        <a routerLink="/login" class="btn btn-ghost bg-transparent font-Aether text-xl text-AQ-title">Log In</a>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
+<div class="w-full h-[64px]"></div> <!--//navbar offset, god-awful hack -->

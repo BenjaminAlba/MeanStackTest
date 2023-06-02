@@ -1,0 +1,27 @@
+<div class="w-screen">
+  <section class="min-h-screen flex items-stretch text-white ">
+      <div class="lg:flex w-1/2 hidden bg-no-repeat bg-cover relative items-center" [ngStyle]="{background: 'url(../../assets/img/login_bar.png)'}">
+          <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+          <div class="w-full px-24 z-10">
+              <h1 class="text-5xl font-bold text-left tracking-wide">AQ Character Creator</h1>
+              <p class="text-3xl my-4">Register</p>
+          </div>
+      </div>
+      <div class="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0 bg-gray-50">
+          <div class="absolute lg:hidden z-10 inset-0 bg-no-repeat bg-cover items-center" [ngStyle]="{background: 'url(../../assets/img/login_bar.png)'}">
+              <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+          </div>
+          <div class="w-full py-6 z-20">
+              <h1 class="my-6 flex flex-col items-center">
+                  <label class="text-[80px] font-bold font-Aether text-white lg:text-AQ-title "> AetherQuest </label>
+              </h1>
+              <p class="">
+                  <a href="" class="text-white lg:text-AQ-title hover:text-[#db4040]">
+                    Return to Landing
+                  </a>
+              </p>
+              <RegisterForm />
+          </div>
+      </div>
+  </section>
+</div>
